@@ -55,13 +55,20 @@ class LoginScreen extends StatelessWidget {
               height: 12,
             ),
             Container(
+              alignment: Alignment.center,
               height: 50,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(15),
               ),
+              child: const CustomText(
+                "تسجيل دخول",
+                fontSize: 17,
+                color: Colors.white,
+                weight: FontWeight.w600,
+              ),
             ),
-            Hexagon(),
           ],
         ),
       ),
