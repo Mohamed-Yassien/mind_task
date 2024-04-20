@@ -50,7 +50,18 @@ class LoginScreen extends StatelessWidget {
                 color: AppColors.hintColor,
                 weight: FontWeight.w600,
               ),
-            )
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            Hexagon(),
           ],
         ),
       ),
