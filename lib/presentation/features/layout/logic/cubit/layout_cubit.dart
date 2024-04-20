@@ -11,23 +11,14 @@ class HomeLayoutCubit extends Cubit<HomeLayoutStates> {
 
   void changeTab(String tab, context) {
     switch (tab) {
-      case "Orders":
-        tabController.animateTo(1);
-        break;
       case "Home":
         tabController.animateTo(0);
         break;
       default:
+        tabController.animateTo(0);
     }
     emit(HomeLayoutChangeScreenState());
-    debugPrint('index is ${tabController.index.toString()}');
   }
 
   String currentRoute = "";
-
-  void changeRouts(String name) {
-    currentRoute = name;
-    debugPrint('changeRouts$currentRoute');
-    emit(HomeLayoutChangeScreenState());
-  }
 }

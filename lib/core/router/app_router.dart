@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-
+import 'package:mind_task_app/presentation/features/layout/ui/layout.dart';
+import 'package:mind_task_app/presentation/features/login/ui/login_screen.dart';
 
 class Routes {
-
+  static const String layoutRoute = "/layout"; 
+  static const String loginRoute = "/login"; 
 }
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-      // case Routes.layoutRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const Layout(child: HomeScreen()),
-      //   );
+      case Routes.layoutRoute:
+        return MaterialPageRoute(
+          builder: (_) => const LayoutScreen(),
+        );
+      case Routes.loginRoute:
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
       default:
         return unDefinedRoute();
     }

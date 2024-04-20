@@ -29,7 +29,7 @@ class DefaultTextField extends StatefulWidget {
     this.borderColor = Colors.white,
     this.fillColor = Colors.white,
     this.textColor = Colors.black,
-    this.hintColor = Colors.white,
+    this.hintColor,
     this.suffixIconColor = Colors.white,
     this.underlineInputBorder = Colors.white,
     this.isFill = false,
@@ -89,6 +89,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5),
         child: TextFormField(
+          cursorColor: AppColors.primary,
           textAlignVertical: TextAlignVertical.center,
           style: TextStyle(
             letterSpacing: widget.isNumber ? 4.0 : 0.0,
@@ -112,7 +113,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             hintStyle: TextStyle(
               letterSpacing: 0.0,
               fontSize: 14,
-              color: widget.hintColor,
+              color: widget.hintColor ?? AppColors.hintColor,
               fontWeight: FontWeight.w300,
             ),
             isDense: false,
@@ -132,7 +133,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             contentPadding: widget.contentPadding ??
                 const EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 15.0,
+                  vertical: 8.0,
                 ),
             // fillColor: whiteColor70,
             hintText: widget.hintText,
@@ -152,55 +153,26 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
                     : widget.suffixIcon),
 
             labelText: widget.label,
-            // enabledBorder: UnderlineInputBorder(
-            //   borderSide: BorderSide(
-            //       color: widget.underlineInputBorder ?? Colors.white),
-            // ),
-            // focusedBorder: UnderlineInputBorder(
-            //   borderSide: BorderSide(
-            //       color: widget.underlineInputBorder ?? Colors.white),
-            // ),
             enabledBorder: widget.border ??
-                const OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(2),
-                    bottomRight: Radius.circular(2),
-                    bottomLeft: Radius.circular(30),
-                  ),
+                OutlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.hintColor),
+                  borderRadius: BorderRadius.circular(15),
                 ),
-            // border: widget.border ?? const UnderlineInputBorder(),
-            border: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(2),
-                bottomRight: Radius.circular(2),
-                bottomLeft: Radius.circular(30),
-              ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.hintColor),
+              borderRadius: BorderRadius.circular(15),
             ),
             focusedBorder: widget.border ??
-                const OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(2),
-                    bottomRight: Radius.circular(2),
-                    bottomLeft: Radius.circular(30),
-                  ),
+                OutlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.hintColor),
+                  borderRadius: BorderRadius.circular(15),
                 ),
-            errorBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
+            errorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
                 color: Colors.red,
                 width: .5,
               ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-                bottomLeft: Radius.circular(15),
-              ),
+              borderRadius: BorderRadius.circular(15),
             ),
           ),
           validator: widget.validate,
