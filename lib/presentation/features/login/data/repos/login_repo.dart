@@ -13,6 +13,7 @@ class LoginRepository {
       url: EndPoints.login,
       body: loginRequest.toJson(),
       loading: true,
+      isForm: true,
     );
     if (response?.statusCode == 200) {
       return UserModel.fromJson(response?.data);

@@ -105,37 +105,42 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 12,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      if (formKey.currentState!.validate()) {
-                        LoginRequest loginRequest = LoginRequest(
-                          email: emailController.text,
-                          password: passwordController.text,
-                          token: "asd342dsdddsd323dsdadasd3e",
-                          platform: "1",
-                          deviceId: "bfghtr5yrtytd654e6trd",
-                        );
-                        BlocProvider.of<LoginCubit>(context).login(
-                          context: context,
-                          loginRequest: loginRequest,
-                        );
-                      }
+                  BlocBuilder<LoginCubit, LoginState>(
+                    builder: (context, state) {
+                      var cubit = LoginCubit.get(context);
+                      return GestureDetector(
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            LoginRequest loginRequest = LoginRequest(
+                              email: emailController.text,
+                              password: passwordController.text,
+                              token: "asd342dsdddsd323dsdadasd3e",
+                              platform: "1",
+                              deviceId: "bfghtr5yrtytd654e6trd",
+                            );
+                            cubit.login(
+                              context: context,
+                              loginRequest: loginRequest,
+                            );
+                          }
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: const CustomText(
+                            "تسجيل دخول",
+                            fontSize: 17,
+                            color: Colors.white,
+                            weight: FontWeight.w600,
+                          ),
+                        ),
+                      );
                     },
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: const CustomText(
-                        "تسجيل دخول",
-                        fontSize: 17,
-                        color: Colors.white,
-                        weight: FontWeight.w600,
-                      ),
-                    ),
                   ),
                 ],
               ),

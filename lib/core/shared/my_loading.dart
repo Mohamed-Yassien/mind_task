@@ -19,7 +19,11 @@ class MyLoading {
                   ? loadingWidget()
                   : Dialog(
                       child: SizedBox(
-                          width: 200, height: 200, child: loadingWidget())),
+                        width: 200,
+                        height: 200,
+                        child: loadingWidget(),
+                      ),
+                    ),
             );
           });
 
@@ -27,8 +31,9 @@ class MyLoading {
     }
   }
 
-  static Center loadingWidget() =>
-      Center(child: Lottie.asset("assets/json/loading.json", width: 150));
+  static Center loadingWidget() => const Center(
+        child: CircularProgressIndicator.adaptive(),
+      );
 
   static dismis(BuildContext context) {
     if (shown) {
