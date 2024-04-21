@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mind_task_app/presentation/features/layout/ui/layout.dart';
-import 'package:mind_task_app/presentation/features/login/ui/login_screen.dart';
+import 'package:mind_task_app/features/layout/ui/layout.dart';
+import 'package:mind_task_app/features/login/ui/login_screen.dart';
 
 class Routes {
   static const String layoutRoute = "/layout"; 

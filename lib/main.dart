@@ -9,7 +9,7 @@ import 'package:mind_task_app/core/utils/utils.dart';
 import 'package:mind_task_app/data/sources/api/dio.dart';
 import 'package:material_color_gen/material_color_gen.dart';
 import 'package:mind_task_app/data/sources/local/sharedpreferences.dart';
-import 'package:mind_task_app/presentation/features/layout/logic/cubit/layout_cubit.dart';
+import 'package:mind_task_app/features/layout/logic/cubit/layout_cubit.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: AppColors.primary.toMaterialColor(),
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          initialRoute: Routes.loginRoute
+          initialRoute: Routes.layoutRoute
           // Utiles.token.isEmpty ? Routes.loginScreen : Routes.layoutRoute,
           ),
     );

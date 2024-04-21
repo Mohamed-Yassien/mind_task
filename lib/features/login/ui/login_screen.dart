@@ -4,9 +4,9 @@ import 'package:mind_task_app/core/router/app_router.dart';
 import 'package:mind_task_app/core/shared/customtext.dart';
 import 'package:mind_task_app/core/shared/default_text_field.dart';
 import 'package:mind_task_app/core/themes/colors.dart';
-import 'package:mind_task_app/presentation/features/login/data/requests/login_request.dart';
-import 'package:mind_task_app/presentation/features/login/logic/cubit/login_cubit.dart';
-import 'package:mind_task_app/presentation/features/login/logic/cubit/login_state.dart';
+import 'package:mind_task_app/features/login/data/requests/login_request.dart';
+import 'package:mind_task_app/features/login/logic/cubit/login_cubit.dart';
+import 'package:mind_task_app/features/login/logic/cubit/login_state.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

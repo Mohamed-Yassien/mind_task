@@ -1,7 +1,7 @@
 import 'package:mind_task_app/data/endpoints/endpoint.dart';
 import 'package:mind_task_app/data/sources/api/dio.dart';
-import 'package:mind_task_app/presentation/features/login/data/models/user_model.dart';
-import 'package:mind_task_app/presentation/features/login/data/requests/login_request.dart';
+import 'package:mind_task_app/features/login/data/models/user_model.dart';
+import 'package:mind_task_app/features/login/data/requests/login_request.dart';
 
 class LoginRepository {
   static Future<UserModel?> login({

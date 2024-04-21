@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mind_task_app/presentation/features/layout/ui/widgets/bottom_navbar.dart';
-import 'package:mind_task_app/presentation/features/layout/ui/widgets/floatactionbotton.dart';
+import 'package:mind_task_app/features/home/ui/home_screen.dart';
+import 'package:mind_task_app/features/layout/ui/widgets/bottom_navbar.dart';
+import 'package:mind_task_app/features/layout/ui/widgets/floatactionbotton.dart';
 import '../logic/cubit/layout_cubit.dart';
 import '../logic/cubit/layout_states.dart';
 
@@ -32,7 +33,7 @@ class _LayoutScreenState extends State<LayoutScreen>
         controller: cubit.tabController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
-          Scaffold(),
+          HomeScreen(),
           Scaffold(),
           Scaffold(),
           Scaffold(),
@@ -56,4 +57,3 @@ class _LayoutScreenState extends State<LayoutScreen>
     );
   }
 }
-
