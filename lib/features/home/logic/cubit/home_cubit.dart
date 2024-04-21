@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mind_task_app/features/home/data/models/home_data_model.dart';
 import 'package:mind_task_app/features/home/data/repos/home_repo.dart';
@@ -19,6 +20,7 @@ class HomeCubit extends Cubit<HomeState> {
     );
     if (response != null) {
       homeDataModel = response;
+      debugPrint("home data $homeDataModel");
       emit(GetHomeSuccessState());
     } else {
       emit(GetHomeErrorState());
