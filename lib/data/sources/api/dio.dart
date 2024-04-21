@@ -20,7 +20,7 @@ class DioHelper {
             "Accept": "application/json",
             "content-type": "application/json",
           },
-          baseUrl: 'https://meat.itadvip.com/api/',
+          baseUrl: 'https://ihoneyherb.com/test-application/',
           receiveDataWhenStatusError: true,
           connectTimeout: 60000,
           receiveTimeout: 60000,
